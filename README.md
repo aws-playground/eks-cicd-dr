@@ -49,16 +49,18 @@ Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service
 
 <img src="/image/DR_One_Region.png" width="800"/>
 
-* Target RPO = 0 min : Multi-AZ Sync Replication
-* Target RTO < 10 min : Duplication & Automatically Fail Over
-* Containers
-  * Container : Automatically fail over by K8s.
-* EFS
-  * Storage : Using Multi-AZ storage to prevent data loss.
-  * ENI : Duplicate ENI for HA.
-* RDS Aurora
-  * Storage : Using Multi-AZ storage to prevent data loss.
-  * EC2 Instance : Automatically promote a reader instance to writer instance.
+* Target RPO, RTO
+  * RPO = 0 min : Multi-AZ Sync Replication
+  * RTO < 10 min : Duplication & Automatically Fail Over
+* Components
+  * Containers
+    * Container : Automatically fail over by K8s.
+  * EFS
+    * Storage : Using Multi-AZ storage to prevent data loss.
+    * ENI : Duplicate ENI for HA.
+  * RDS Aurora
+    * Storage : Using Multi-AZ storage to prevent data loss.
+    * EC2 Instance : Automatically promoted a reader instance to writer instance by RDS Aurora.
 
 ### Disaster recovery on multiple regions
 
@@ -66,3 +68,12 @@ Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service
 
 * Target RPO < 10 min : Cross-region Async Replication
 * Target RTO < 30 min : Manually Change Primary & Provisioning Computing Resource
+* EFS
+  * Remove EFS replication.
+  * After removing EFS replication, Read-only EFS promoted to Writable EFS.
+* RDS Aurora
+  * Run global database failover to change primary RDS Aurora.
+* Node Group
+  * Increase Web Server and App Server EKS node group's count
+  * After increasing EKS node gorups, Web/App server container run automatically by K8s.
+
