@@ -23,7 +23,6 @@ Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service
   * Manage : Node group for controller & plugins.
   * Web Server : Node group for service peccy's web server containers.
   * App Server : Node group for service peccy's app server containers.
-
 * Controller & Plugins
   * ALB Controller : Control AWS ALB through k8s ingress object.
   * ExternalDNS Controller : Control AWS Route 53 through k8s ingress object.
