@@ -52,8 +52,6 @@ Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service
   * RPO = 0 min : Multi-AZ Sync Replication
   * RTO < 10 min : Duplication and Automatically Fail Over
 * Prepare DR
-  * Node Group
-    * Manage Node Group : manage 
   * Containers
     * Deploy containers through K8s deployment.
     * Automatically fail over by K8s.
@@ -80,12 +78,12 @@ Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service
   * Route 53
     * Set Failover Routing rule to route traffic to secondary EKS cluster's ALB automatically.
 * Perform DR
-  * First - EFS
+  * First : EFS
     * Remove EFS replication.
     * After removing EFS replication, Read-only EFS promoted to Writable EFS.
-  * Second - RDS Aurora
+  * Second : RDS Aurora
     * Run global database failover to change primary RDS Aurora.
-  * Third - Node Group
+  * Third : Node Group
     * Increase number of Web Server and App Server EKS node group
     * After increasing EKS node gorups, Web/App server container run automatically by K8s.
 
