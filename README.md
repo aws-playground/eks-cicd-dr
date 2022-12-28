@@ -25,17 +25,19 @@ Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service
   * App Server : Node group for service peccy's app server containers
 
 * Controller & Plugins
-  * ALB Controller : Control AWS ALB through k8s ingress object
-  * ExternalDNS Controller : Control AWS Route 53 through k8s ingress object
-  * EFS Controller, Node : Control AWS EFS through k8s storage class & persistance volume
-  * Fluentd Bit : Collect and send container's logs to AWS CloudWatch Logs
-  * CloudWatch Agent : Collect and send container's metrics, EC2 instance's metrics to AWS CloudWatch Metrics
+  * ALB Controller : Control AWS ALB through k8s ingress object.
+  * ExternalDNS Controller : Control AWS Route 53 through k8s ingress object.
+  * EFS Controller, Node : Control AWS EFS through k8s storage class & persistance volume.
+  * Fluentd Bit : Collect and send container's logs to AWS CloudWatch Logs.
+  * CloudWatch Agent : Collect and send container's metrics, EC2 instance's metrics to AWS CloudWatch Metrics.
 
 ### Peccy service CI with AWS CodePipeline and AWS CodeBuild
 
 <img src="/image/CI.png" width="800"/>
 
-
+* Run unit test and build container image through AWS CodePipeline and AWS CodeBuild.
+* Push container image to two AWS ECR located in different regions for DR.
+* AWS CodePipeline process is notifed to service developers & devops engineers through AWS Chatbot.
 
 ### Peccy service CD with ArgoCD on AWS EKS cluster
 
