@@ -20,9 +20,9 @@ Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service
 <img src="/image/EKS_Cluster.png" width="800"/>
 
 * EKS Node Group
-  * Manage : Node group for controller & plugins
-  * Web Server : Node group for service peccy's web server containers 
-  * App Server : Node group for service peccy's app server containers
+  * Manage : Node group for controller & plugins.
+  * Web Server : Node group for service peccy's web server containers.
+  * App Server : Node group for service peccy's app server containers.
 
 * Controller & Plugins
   * ALB Controller : Control AWS ALB through k8s ingress object.
@@ -43,11 +43,26 @@ Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service
 
 <img src="/image/CD.png" width="800"/>
 
+* ArgoCD polls k8s manifest git repo and apply new version of k8s manifest. 
+
 ### Disaster recovery on one region
 
 <img src="/image/DR_One_Region.png" width="800"/>
+
+* Target RPO = 0 min : Multi-AZ Sync Replication
+* Target RTO < 10 min : Duplication & Automatically Fail Over
+* Containers
+  * Container : Automatically fail over by K8s.
+* EFS
+  * Storage : Using Multi-AZ storage to prevent data loss.
+  * ENI : Duplicate ENI for HA.
+* RDS Aurora
+  * Storage : Using Multi-AZ storage to prevent data loss.
+  * EC2 Instance : Automatically promote a reader instance to writer instance.
 
 ### Disaster recovery on multiple regions
 
 <img src="/image/DR_Multi_Region.png" width="800"/>
 
+* Target RPO < 10 min : Cross-region Async Replication
+* Target RTO < 30 min : Manually Change Primary & Provisioning Computing Resource
