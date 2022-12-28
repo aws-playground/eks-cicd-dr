@@ -11,16 +11,27 @@ eks-cicd-dr is prototyping project for CI/CD and DR (Disaster Recovery) based on
 
 <img src="/image/service_peccy_web.png" width="400"/>
 
-Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service peccy consists of 3-tier architecture. Service peccy uses MySQL (Aurora) to store peccy's information and NFS (EFS) to store peccy's picture.
+Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service peccy consists of **3-tier** architecture. Service peccy uses MySQL (Aurora) to store peccy's information and NFS (EFS) to store peccy's picture.
 
 ## Architecture
 
-### Peccy service on AWS EKS
+### Peccy service (3-tier Architecture) on AWS EKS cluster
 
-### Peccy service CI with AWS CodePipeline and CodeBuild
+<img src="/image/EKS_Cluster.png" width="800"/>
 
-### Peccy service CD with ArgoCD and EKS
+### Peccy service CI with AWS CodePipeline and AWS CodeBuild
 
-### Disaster Recovery within One Region
+<img src="/image/CI.png" width="800"/>
 
-### Disaster Rcovery with Multiple Region
+### Peccy service CD with ArgoCD on AWS EKS cluster
+
+<img src="/image/CD.png" width="800"/>
+
+### Disaster recovery on one region
+
+<img src="/image/DR_One_Region.png" width="800"/>
+
+### Disaster recovery on multiple regions
+
+<img src="/image/DR_Multi_Region.png" width="800"/>
+
