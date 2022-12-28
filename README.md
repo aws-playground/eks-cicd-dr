@@ -11,7 +11,7 @@ eks-cicd-dr is prototyping project for CI/CD and DR (Disaster Recovery) based on
 
 <img src="/image/service_peccy_web.png" width="400"/>
 
-Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service peccy consists of **3-tier** architecture. Service peccy uses MySQL (Aurora) to store peccy's information and NFS (EFS) to store peccy's picture.
+Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service peccy consists of **3-tier** architecture. Service peccy uses AWS RDS Aurora (MySQL) to store peccy's hobby and AWS EFS to store peccy's picture.
 
 ## Architecture
 
