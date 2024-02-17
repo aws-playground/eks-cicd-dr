@@ -3,8 +3,8 @@
 eks-cicd-dr is prototyping project for CI/CD and DR (Disaster Recovery) based on EKS. eks-cicd-dr project consists of the following git repositories.
 
 * [aws-config](https://github.com/aws-playground/eks-cicd-dr_aws-configs) : Guide to set AWS resources and EKS clusters
-* [service-peccy-web](https://github.com/aws-playground/eks-cicd-dr_service-peccy-web) : Service peccy's web server 
-* [service-peccy-app](https://github.com/aws-playground/eks-cicd-dr_service-peccy-app) : Service peccy's app server
+* [service-peccy-web](https://github.com/aws-playground/common_service-peccy-web) : Service peccy's web server 
+* [service-peccy-app](https://github.com/aws-playground/common_service-peccy-app) : Service peccy's app server
 * [deploy-eks](https://github.com/aws-playground/eks-cicd-dr_deploy-eks) : K8s manifests for GitOps with ArgoCD
 
 ## Service Peccy
