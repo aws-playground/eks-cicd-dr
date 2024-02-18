@@ -9,7 +9,7 @@ eks-cicd-dr is prototyping project for CI/CD and DR (Disaster Recovery) based on
 
 ## Service Peccy
 
-<img src="/images/service_peccy_web.png" width="400"/>
+<img src="/images/service-peccy-web.png" width="400"/>
 
 Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service peccy consists of **3-tier** architecture. Service peccy uses AWS RDS Aurora (MySQL) to store peccy's hobby and AWS EFS to store peccy's picture.
 
@@ -17,7 +17,7 @@ Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service
 
 ### Peccy service (3-tier Architecture) on AWS EKS cluster
 
-<img src="/images/EKS_Cluster.png" width="800"/>
+<img src="/images/architecture-eks-cluster.png" width="800"/>
 
 * EKS Node Group
   * Manage : Node group for controller and plugins. No need to high spec EC2 instance because controller and plugins do not process larget traffic. And don't need a large number of EC2 Instances. Two EC2 instances are recommended.
@@ -32,7 +32,7 @@ Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service
 
 ### Peccy service CI with AWS CodePipeline and AWS CodeBuild
 
-<img src="/images/CI.png" width="800"/>
+<img src="/images/architecture-ci.png" width="800"/>
 
 * Run unit test and build container image through AWS CodePipeline and AWS CodeBuild.
 * Push container image to two AWS ECR located in different regions for DR.
@@ -40,13 +40,13 @@ Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service
 
 ### Peccy service CD with ArgoCD on AWS EKS cluster
 
-<img src="/images/CD.png" width="800"/>
+<img src="/images/architecture-cd.png" width="800"/>
 
 * ArgoCD polls k8s manifest git repo and apply new version of k8s manifest. 
 
 ### Disaster recovery on one region (AZ Down)
 
-<img src="/images/DR_One_Region.png" width="800"/>
+<img src="/images/architecture-dr-one-region.png" width="800"/>
 
 * Target RPO, RTO
   * RPO = 0 min : Multi-AZ Sync Replication
@@ -64,7 +64,7 @@ Servic peccy is a simple web service to demonstrate eks-cicd-dr project. Service
 
 ### Disaster recovery on multiple regions (Region Down)
 
-<img src="/image/DR_Multi_Region.png" width="800"/>
+<img src="/images/architecture-dr-multi-region.png" width="800"/>
 
 * Target RPO, RTO
   * RPO < 10 min : Cross-region Async Replication
